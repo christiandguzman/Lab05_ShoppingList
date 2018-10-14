@@ -20,23 +20,17 @@
         
         <h2>List</h2>
         
-        <form type="post" action="register" >
+        <form method="post" action="shoppinglist">
             Add item:
-            <input type="text" name="item">            
-            <input type="button" value="add" >
-
-            <br>
-            <c:forEach items ="${list}" var="item">
-                <li>
-                    <input type="radio" name="${item}">
-                    ${item}
-                </li>
+            <input type="text" name="itemName">            
+            
+            <input type="submit" value ="Add to cart"> 
+            <input type="hidden" name="action" value="add">
+            <c:forEach var="item" items="${list}">
+                <br><input type="radio" name="${item}">
+                ${item}
             </c:forEach>
-                
-            <br>
-            <br>
-            <input type="hidden" name="action" value="delete">
-            <input type="submit" value="delete">
+            
 
         </form>
     </body>
